@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -13,15 +13,16 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "jsWebView2Debugging": true
     },
     "DesafioTechnos": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:9001;http://localhost:9000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:9001;http://localhost:9000"
     }
   }
 }

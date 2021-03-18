@@ -14,19 +14,19 @@ namespace DesafioTechnos
     {
         public static void Main(string[] args)
         {
+            //rodando o Seed para popular o banco
             try
             {
                 new MarcaSeed();
                 new TipoProdutoSeed();
-                new PrecoSeed();
                 new ProdutoSeed();
-
-                CreateHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.GetBaseException().Message);
             }
+
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

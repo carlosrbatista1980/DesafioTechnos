@@ -4,5 +4,52 @@
         <name>DesafioTechnos</name>
     </assembly>
     <members>
+        <member name="M:DesafioTechnos.Controllers.CadastroController.CadastrarProdutos(System.Text.Json.JsonElement)">
+            <summary>
+            Cadastra os produtos especificos de acordo com o requisito
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.Nome">
+            <summary>
+            nome do produto
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.Codigo">
+            <summary>
+            codigo do produto
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.Descricao">
+            <summary>
+            descrição do produto
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.DataCadastro">
+            <summary>
+            data do cadastro do produto
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.DataLancamento">
+            <summary>
+            data de lançamento
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.Preco">
+            <summary>
+            Preco do produto
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.TipoProdutoId">
+            <summary>
+            Id da tabela de TipoProduto caso exista
+            </summary>
+        </member>
+        <member name="P:DesafioTechnos.Models.ProdutoModel.MarcaId">
+            <summary>
+            Id da tabela de Marca caso exista
+            </summary>
+        </member>
     </members>
 </doc>

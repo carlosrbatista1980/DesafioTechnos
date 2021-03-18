@@ -9,7 +9,7 @@ namespace EntityFrameworkCore.Helpers
     {
         public static TDestination MapFrom<TDestination>(object source, TDestination destination)
         {
-            if (!(source is null))
+            if (source is null)
             {
                 return destination;
             }

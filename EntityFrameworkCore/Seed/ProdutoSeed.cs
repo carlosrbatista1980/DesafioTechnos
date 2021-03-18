@@ -14,25 +14,28 @@ namespace EntityFrameworkCore.Seed
             var _context = new TechnosContextFactory().CreateDbContext(Array.Empty<string>());
             var produtoList = new List<Produto>();
 
-            for (int i = 0; i < 10; i++)
+            if (!_context.Produto.Any())
             {
-                var produto = new Produto()
+                for (int i = 0; i < 10; i++)
                 {
-                    Nome = $"Produto Nome_{i:000}",
-                    Codigo = $"Codigo_{i:00}",
-                    Descricao = $"Descricao do produto - {i:000}",
-                    DataCadastro = DateTime.Now,
-                    DataLancamento = DateTime.Now.AddMonths(-16),
-                    TipoProduto = _context.TipoProduto.FirstOrDefault(x => x.Id == i),
-                    Preco = _context.Preco.FirstOrDefault(x => x.Id == i),
-                    Marca = _context.Marca.FirstOrDefault(x => x.Id == i),
-                };
+                    var produto = new Produto()
+                    {
+                        Nome = $"Produto Nome_{i:000}",
+                        Codigo = $"Codigo_{i:00}",
+                        Descricao = $"Descricao do produto - {i:000}",
+                        DataCadastro = DateTime.Now,
+                        DataLancamento = DateTime.Now.AddMonths(-16),
+                        TipoProduto = _context.TipoProduto.FirstOrDefault(x => x.Id == i),
+                        Preco = Math.Round((decimal) i),
+                        Marca = _context.Marca.FirstOrDefault(x => x.Id == i),
+                    };
 
-                produtoList.Add(produto);
+                    produtoList.Add(produto);
+                }
+
+                _context.Produto.AddRange(produtoList);
+                _context.SaveChanges();
             }
-
-            _context.Produto.AddRange(produtoList);
-            _context.SaveChanges();
         }
     }
 }

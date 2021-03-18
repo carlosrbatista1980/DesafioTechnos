@@ -21,16 +21,14 @@ namespace EntityFrameworkCore.Data
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Marca> Marca { get; set; }
         public DbSet<TipoProduto> TipoProduto { get; set; }
-        public DbSet<Preco> Preco { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //separei o configuration para deixa a classe CONTEXT  mais limpa
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
             modelBuilder.ApplyConfiguration(new MarcaConfiguration());
             modelBuilder.ApplyConfiguration(new TipoProdutoConfiguration());
-            modelBuilder.ApplyConfiguration(new PrecoConfiguration());
-            
+
             base.OnModelCreating(modelBuilder);
         }
 

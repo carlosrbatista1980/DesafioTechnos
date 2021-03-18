@@ -27,10 +27,10 @@ namespace EntityFrameworkCore.Seed
 
                     tipoList.Add(tipoProduto);
                 }
-            }
 
-            _context.TipoProduto.AddRange(tipoList);
-            _context.SaveChanges();
+                _context.TipoProduto.AddRange(tipoList);
+                _context.SaveChanges();
+            }
         }
     }
 }

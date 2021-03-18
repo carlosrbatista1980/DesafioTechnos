@@ -12,9 +12,8 @@ namespace EntityFrameworkCore.Entities
         public string Descricao { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime? DataLancamento { get; set; }
-        
-        public int? PrecoId { get; set; }
-        public Preco Preco { get; set; }
+        public decimal Preco { get; set; }
+
         public int? TipoProdutoId { get; set; }
         public TipoProduto TipoProduto { get; set; }
         public int? MarcaId { get; set; }

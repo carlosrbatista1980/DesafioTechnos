@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DesafioTechnos</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -22,7 +22,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Index">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="Produtos">Lista de Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="swagger" asp-action="Index">Documentação</a>
                         </li>
                     </ul>
                 </div>
@@ -40,9 +46,40 @@
             &copy; 2021 - DesafioTechnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+
+<script src="~/js/jquery-3.6.0.min.js"></script>
+<script src="~/js/jquery.blockUI.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+    
+<div id="loading" class="d-none">
+    <h4 id="loadingContent"><img src="img/ajax-loader.gif"><span id="loadingContent2"></span></h4>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".nav-item").click(function () {
+            $.blockUI({ message: $("#loadingContent") });
+            var p = "..carregando";
+            var s = "";
+            var i = 0;
+            setInterval(function () {
+                s = p.substring(i, p.length);
+                document.getElementById("loadingContent2").innerHTML = s;
+                i++;
+                if (i > p.length) {
+                    i = 0;
+                    s = p;
+                }
+            }, 300);
+
+            setTimeout(function () { $.unblockUI(); }, 15000);
+        });
+    })
+</script>
+
+@RenderSection("Scripts", required: false)
+
 </body>
 </html>
