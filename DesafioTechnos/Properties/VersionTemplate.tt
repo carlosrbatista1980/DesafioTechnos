@@ -1,0 +1,49 @@
+﻿//using Microsoft.CodeAnalysis.CSharp.Syntax;
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+
+using System;
+using System.Reflection;
+
+[assembly: AssemblyVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.Build #>")]
+[assembly: AssemblyFileVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.Build #>")]
+[assembly: AssemblyInformationalVersion("<#= this.Major #>.<#= this.Minor #>.<#= this.Revision #>.<#= this.Build #>")]
+[assembly: AssemblyCopyright("<#= this.Copyright #>")]
+[assembly: AssemblyCompany("<#= this.Company #>")]
+[assembly: AssemblyTitle("<#= this.Authors #>")]
+[assembly: AssemblyProduct("<#= this.Website #>")]
+[assembly: AssemblyDescription("<#= this.Description #>")]
+
+<#+
+
+string Copyright = $"Copyright© {DateTime.Now.Year} Technos";
+string Company = "Grupo Technos";
+string Authors = $"Carlos Rodrigues Batista - carlosrbatista1980@gmail.com";
+string Website = "https://www.grupotechnos.com.br/pt";
+string Description = "O Grupo Technos é a maior empresa de relógios da América Latina e blah blah blah blah " +
+                     "Consolidamos nossa liderança em termos de faturamento no mercado brasileiro nos anos 90. Desde 1956. e mais blah blah blah " +
+                     "O resto eu copiei e colei do site da technos.";
+
+int Major = DateTime.Now.Year;
+int Minor = DateTime.Now.Month;
+int Revision = DateTime.Now.Day;
+
+static string hour = DateTime.Now.TimeOfDay.Hours.ToString().PadLeft(2, '0');
+static string minutes = DateTime.Now.TimeOfDay.Minutes.ToString().PadLeft(2, '0');
+static string seconds = DateTime.Now.TimeOfDay.Seconds.ToString().PadLeft(2, '0');
+
+string Build = $"{hour}{minutes}";
+
+#>
+
+<#+
+/*
+ Inserir essa configuração no .csproj
+ <PropertyGroup>
+ 	<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+ </PropertyGroup>
+*/
+#>
+
+
+

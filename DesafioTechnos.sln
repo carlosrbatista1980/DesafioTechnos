@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTechnos", "DesafioTechnos\DesafioTechnos.csproj", "{0DA8EDBF-62F5-4703-8E74-0624940DAF08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCore", "EntityFrameworkCore\EntityFrameworkCore.csproj", "{70EC13DB-92A6-4155-B306-F7217C669F76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DA8EDBF-62F5-4703-8E74-0624940DAF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA8EDBF-62F5-4703-8E74-0624940DAF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA8EDBF-62F5-4703-8E74-0624940DAF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA8EDBF-62F5-4703-8E74-0624940DAF08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EC13DB-92A6-4155-B306-F7217C669F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EC13DB-92A6-4155-B306-F7217C669F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EC13DB-92A6-4155-B306-F7217C669F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EC13DB-92A6-4155-B306-F7217C669F76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46C25A48-C308-4332-A8A0-92CB6B633CAC}
+	EndGlobalSection
+EndGlobal
